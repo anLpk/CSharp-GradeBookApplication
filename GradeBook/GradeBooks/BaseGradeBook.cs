@@ -9,7 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace GradeBook.GradeBooks
 {
-    public class BaseGradeBook
+    public abstract class BaseGradeBook
     {
         public GradeBookType Type { get; set; }
         public string Name { get; set; }
@@ -65,6 +65,11 @@ namespace GradeBook.GradeBooks
                 return;
             }
             student.RemoveGrade(score);
+        }
+
+        internal void CalculateStudentStatistics()
+        {
+            throw new NotImplementedException();
         }
 
         public void ListStudents()
